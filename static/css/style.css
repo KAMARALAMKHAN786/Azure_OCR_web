@@ -1,0 +1,257 @@
+
+     
+     /* Global Styles */
+     body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Header */
+    .header {
+        background-color: #101c3d;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Form Section */
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .form-wrapper {
+        max-width: 500px;
+        width: 100%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Table Section */
+    .table-container {
+        margin: 20px auto;
+        max-width: 100%;
+        padding: 0 20px;
+        
+            overflow-x: auto;
+            max-width: 100%;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        border: 2px solid #ccc;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #101c3d;
+        color: white;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    tbody, td, tfoot, th, thead, tr {
+        background-color: #101c3d;
+        color: white;
+        text-transform: capitalize;
+        text-align: center;
+        border-color: #101c3d;
+    }
+
+    #result {
+        display: none;
+    }
+
+    .title {
+        padding-right: 17.5rem; 
+    }
+    #title{
+        padding-right: 9.5rem ;
+    }
+
+    /* Processed Image List */
+    .image-list-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .image-list {
+        background-color: #f8f9fa;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .image-list h3 {
+        color: #101c3d;
+        margin-bottom: 10px;
+    }
+
+    .image-list a {
+        display: block;
+        padding: 10px;
+        margin: 5px 0;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #101c3d;
+        font-weight: bold;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .image-list a:hover {
+        background-color: #e9e6e6;
+    }
+
+    /* Responsive Styles */
+    @media screen and (max-width: 768px) {
+        .form-container {
+            flex-direction: column;
+        }
+    }
+
+
+    /* Add this CSS */
+    a .processed-image-link {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: white;
+        border: 1px solid #101c3d;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #101c3d;
+        font-weight: bold;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .processed-image-link:hover {
+        background-color: #e0e0e0;
+    }
+
+    a{
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: white;
+        border: 1px solid #101c3d;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #101c3d;d6
+        font-weight: bold;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    /* Add this CSS for the image preview popup */
+    .image-preview-popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+    
+    .image-preview-popup img {
+        max-width: 100%;
+        max-height: 80vh;
+    }
+    
+
+
+    /* Add this to your existing style.css or in a <style> tag in the <head> section */
+   
+
+
+/* ###################final toggle button */
+
+.toggle-buttons {
+    display: flex;
+    /* justify-content: space-between; */
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+    /* text-align: center; 
+    margin-bottom: 10px; */
+}
+
+
+.toggle-buttons .btn {
+    flex: 1;
+    margin-right: 5px;
+}
+
+
+.toggle-buttons .btn.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Add this to style the active button */
+.toggle-buttons .btn.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Add this to style the inactive button */
+.toggle-buttons .btn:not(.active) {
+    background-color: #fff;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+/* Preview Section Styles */
+
+.image-preview {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    /* background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center; */
+
+}
+
+#image-preview {
+    max-width: 100%; /* Ensure the image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Right Side Styles */
+.toggle-and-preview-container {
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+@media screen and (max-width: 768px) {
+    .content-container {
+        flex-direction: row;
+    }
+}

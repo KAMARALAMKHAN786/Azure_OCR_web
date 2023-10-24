@@ -1,0 +1,50 @@
+<!-- display_result.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Analysis Result</h1>
+  <div>
+    <ul>
+      <li><strong>Restaurant Name:</strong> {{ json_data.fields.RestaurantName.valueString }}</li>
+      <li><strong>Restaurant Address:</strong> {{ json_data.fields.RestaurantAddress.valueString }}</li>
+      <li><strong>Restaurant Phone Number:</strong> {{ json_data.fields.RestuarantPhoneNumber.valueString }}</li>
+      <li><strong>Restaurant GST Number:</strong> {{ json_data.fields.RestuarantGSTNumber.valueString }}</li>
+      <li><strong>Date:</strong> {{ json_data.fields.date.content }}</li>
+      <li><strong>Time:</strong> {{ json_data.fields.time.content }}</li>
+      <li><strong>Bill/Receipt Number:</strong> {{ json_data.fields['bill/receiptNumber'].valueString }}</li>
+      <li><strong>Quantity:</strong> {{ json_data.fields.quantity.valueString }}</li>
+      <li><strong>Sub Total:</strong> {{ json_data.fields.subTotal.valueNumber }}</li>
+      <li><strong>Bill Amount Total:</strong> {{ json_data.fields.billAmountTotal.valueNumber }}</li>
+      
+      <!-- Iterate over the Items array -->
+      <li><strong>Items:</strong>
+        <ul>
+          {% for item in json_data.fields.Items.valueArray %}
+            <li>
+              <strong>Item:</strong> {{ item.valueObject.item.valueString }},
+              <strong>Qty:</strong> {{ item.valueObject.Qty.content }},
+              <strong>Rate:</strong> {{ item.valueObject.rate.valueNumber }},
+              <strong>Amount:</strong> {{ item.valueObject.amount.valueNumber }}
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <!-- Iterate over the TaxDetails array -->
+      <li><strong>TaxDetails:</strong>
+        <ul>
+          {% for tax_detail in json_data.fields.TaxDetails.valueArray %}
+            <li>
+              <strong>Type:</strong> {{ tax_detail.valueObject.type.valueString }},
+              <strong>Amount:</strong> {{ tax_detail.valueObject.amount.valueNumber }}
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <!-- Add more fields as needed -->
+
+    </ul>
+  </div>
+{% endblock %}
